@@ -55,39 +55,46 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
-
-
-
-
-
+```
+Developed by :Sithi hajara I
+Reference no : 212221230102
+```
+```
+#define echoPin 9
+#define trigPin 10
+long duration;
+int distance;
+void setup(){
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+}
+void loop(){
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration * 0.034/2;
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+}
+```
 
 ### Distance vs measurement table 
+![190888921-d5891f4a-ba12-4a09-b48f-cd8c5d48ef4b](https://user-images.githubusercontent.com/93427278/190902218-035184b7-cc2d-4857-a324-0d4789d4555a.png)
 
-			
- 
-			
-			
-			
+### Circuit Diagram
+![190888981-48726224-f9c6-4ba8-9c3b-a243d32e9feb](https://user-images.githubusercontent.com/93427278/190902245-be555d53-58c5-4ed0-8054-7bd7672f0e09.png)
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
+### Serial Monitor:
+![190888928-0d6b8d7c-f919-4a5c-87ca-d28cfbfa12c5](https://user-images.githubusercontent.com/93427278/190902261-63cb9554-c38b-4cbd-8e23-7d16a4c36cdb.png)
 
-			
-			
-			
-			
-			
-			Average error = sum/ number of readings 
- 
-
-
-
-
-
-
-
-
+### Average error = sum/ number of readings
+```
+        = 0.5+0.7+0.4+0.8+1.0
+        =  3.4/5
+	=  0.68
+```
 ### RESULTS
-
-
-
- 
+Thus the distance value is measured in "CM" using ultrasonic sensor.
